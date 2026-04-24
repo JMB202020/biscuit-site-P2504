@@ -1,0 +1,529 @@
+---
+import '../styles/site.css';
+const site = {
+  name: 'PAWfect Friends',
+  phone: '07961 765506',
+  phoneTel: '+447961765506',
+  address: 'Sutton Coldfield',
+};
+---
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PAWfect Friends | Pet Sitting &amp; Dog Walking in Sutton Coldfield</title>
+  <meta name="description" content="Professional, caring pet sitting and dog walking services across Sutton Coldfield and surrounding areas. Your pets are in safe hands with PAWfect Friends." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body>
+
+  <!-- Preview Banner -->
+  <div style="background:#B45309;color:white;padding:10px 16px;text-align:center;font-size:14px;position:sticky;top:0;z-index:50"><div style="max-width:56rem;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap"><span>Preview redesign for <strong>PAWfect Friends</strong></span><a href="https://biscuitweb.co.uk/activate?id=P2504&amp;name=PAWfect%20Friends" style="display:inline-flex;align-items:center;padding:4px 16px;background:white;color:#B45309;font-weight:700;font-size:12px;border-radius:9999px;text-decoration:none">Like it? Just £20/month</a></div></div>
+
+  <!-- Nav -->
+  <nav class="bg-[var(--color-brand-primary-deep)] text-white sticky top-[45px] z-40">
+    <div class="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
+      <a href="/P2504" class="font-display font-bold text-lg text-white hover:text-[var(--color-brand-accent)] transition-colors flex items-center gap-2">
+        <span class="text-2xl">🐾</span> PAWfect Friends
+      </a>
+      <!-- Desktop nav -->
+      <ul class="hidden md:flex gap-8 text-sm font-semibold">
+        <li><a href="#services" class="text-white hover:text-[var(--color-brand-accent)] transition-colors">Services</a></li>
+        <li><a href="#coverage" class="text-white hover:text-[var(--color-brand-accent)] transition-colors">Coverage</a></li>
+        <li><a href="#about" class="text-white hover:text-[var(--color-brand-accent)] transition-colors">About Us</a></li>
+        <li><a href="#pricing" class="text-white hover:text-[var(--color-brand-accent)] transition-colors">Pricing</a></li>
+        <li><a href="#contact" class="inline-block bg-[var(--color-brand-accent)] hover:bg-[var(--color-brand-accent-deep)] text-white px-5 py-1.5 rounded-full transition-colors">Get in Touch</a></li>
+      </ul>
+      <!-- Hamburger -->
+      <button id="menu-toggle" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Open menu" aria-expanded="false">
+        <span class="block w-6 h-0.5 bg-white transition-all" id="bar1"></span>
+        <span class="block w-6 h-0.5 bg-white transition-all" id="bar2"></span>
+        <span class="block w-6 h-0.5 bg-white transition-all" id="bar3"></span>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[var(--color-brand-primary-deep)] border-t border-white/20 px-4 pb-4">
+      <ul class="flex flex-col gap-3 pt-3 text-sm font-semibold">
+        <li><a href="#services" class="block text-white hover:text-[var(--color-brand-accent)] transition-colors py-1">Services</a></li>
+        <li><a href="#coverage" class="block text-white hover:text-[var(--color-brand-accent)] transition-colors py-1">Coverage</a></li>
+        <li><a href="#about" class="block text-white hover:text-[var(--color-brand-accent)] transition-colors py-1">About Us</a></li>
+        <li><a href="#pricing" class="block text-white hover:text-[var(--color-brand-accent)] transition-colors py-1">Pricing</a></li>
+        <li><a href="#contact" class="block text-white hover:text-[var(--color-brand-accent)] transition-colors py-1">Get in Touch</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    const bar1 = document.getElementById('bar1');
+    const bar2 = document.getElementById('bar2');
+    const bar3 = document.getElementById('bar3');
+    toggle?.addEventListener('click', () => {
+      const open = menu?.classList.toggle('hidden') === false;
+      toggle.setAttribute('aria-expanded', String(!menu?.classList.contains('hidden')));
+      if (!menu?.classList.contains('hidden')) {
+        bar1?.classList.add('rotate-45', 'translate-y-2');
+        bar2?.classList.add('opacity-0');
+        bar3?.classList.add('-rotate-45', '-translate-y-2');
+      } else {
+        bar1?.classList.remove('rotate-45', 'translate-y-2');
+        bar2?.classList.remove('opacity-0');
+        bar3?.classList.remove('-rotate-45', '-translate-y-2');
+      }
+    });
+    // Close on anchor click (mobile)
+    document.querySelectorAll('#mobile-menu a').forEach(a => {
+      a.addEventListener('click', () => {
+        menu?.classList.add('hidden');
+        bar1?.classList.remove('rotate-45', 'translate-y-2');
+        bar2?.classList.remove('opacity-0');
+        bar3?.classList.remove('-rotate-45', '-translate-y-2');
+      });
+    });
+  </script>
+
+  <!-- Hero: solid colour (no images available) -->
+  <section class="bg-[var(--color-brand-primary)] min-h-[90vh] flex items-center relative overflow-hidden">
+    <!-- Decorative background shapes -->
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-[var(--color-brand-primary-deep)] rounded-full opacity-40 translate-x-32 -translate-y-24"></div>
+      <div class="absolute bottom-0 left-0 w-80 h-80 bg-[var(--color-brand-primary-deep)] rounded-full opacity-30 -translate-x-24 translate-y-24"></div>
+      <div class="absolute top-1/2 left-1/4 w-4 h-4 bg-[var(--color-brand-accent)] rounded-full opacity-60"></div>
+      <div class="absolute top-1/3 right-1/3 w-6 h-6 bg-[var(--color-brand-accent)] rounded-full opacity-40"></div>
+      <div class="absolute bottom-1/3 right-1/4 w-3 h-3 bg-white rounded-full opacity-40"></div>
+    </div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 py-24 text-center text-white">
+      <span class="inline-block bg-white/20 text-white text-sm font-semibold px-4 py-1.5 rounded-full mb-6 border border-white/30">📍 Sutton Coldfield</span>
+      <div class="text-7xl mb-6">🐾</div>
+      <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6 text-white">
+        PAWfect Friends
+      </h1>
+      <p class="text-xl md:text-2xl text-white/90 mb-4 max-w-2xl mx-auto font-semibold">
+        Professional pet sitting and dog walking in Sutton Coldfield
+      </p>
+      <p class="text-base md:text-lg text-white/80 mb-10 max-w-xl mx-auto">
+        We treat every pet like our own. Reliable, insured, and completely local.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#contact" class="inline-block bg-[var(--color-brand-accent)] hover:bg-[var(--color-brand-accent-deep)] text-white font-bold px-8 py-3 rounded-lg transition-colors text-lg">
+          Book a Visit
+        </a>
+        <a href="tel:+447961765506" class="inline-block bg-white/20 hover:bg-white/30 text-white font-bold px-8 py-3 rounded-lg transition-colors border border-white/40 text-lg">
+          Call 07961 765506
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust bar -->
+  <div class="bg-[var(--color-brand-accent)] py-4">
+    <div class="max-w-5xl mx-auto px-6">
+      <ul class="flex flex-wrap justify-center gap-x-8 gap-y-2 text-white font-semibold text-sm">
+        <li class="flex items-center gap-2"><span>✅</span> Fully insured</li>
+        <li class="flex items-center gap-2"><span>❤️</span> First aid trained</li>
+        <li class="flex items-center gap-2"><span>🏠</span> Home visits available</li>
+        <li class="flex items-center gap-2"><span>📱</span> Daily photo updates</li>
+        <li class="flex items-center gap-2"><span>🌳</span> Sutton Coldfield based</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <section id="services" class="py-20 bg-[var(--color-brand-bg)]">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <span class="inline-block bg-[var(--color-cream)] text-[var(--color-brand-primary)] text-sm font-semibold px-4 py-1.5 rounded-full mb-4">What We Offer</span>
+        <h2 class="text-4xl md:text-5xl font-extrabold text-[var(--color-ink)] mb-4">Our Services</h2>
+        <p class="text-[var(--color-ink-soft)] text-lg max-w-2xl mx-auto">From daily dog walks to overnight stays, we offer everything your pet needs when you cannot be there.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Dog Walking -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-[var(--color-border)] hover:shadow-md transition-shadow">
+          <div class="text-5xl mb-4">🐕</div>
+          <h3 class="text-xl font-extrabold text-[var(--color-ink)] mb-2">Dog Walking</h3>
+          <p class="text-[var(--color-ink-soft)] text-sm leading-relaxed">Daily group or solo walks in local parks and green spaces. Your dog gets fresh air, exercise, and great company.</p>
+          <ul class="mt-4 space-y-1 text-sm text-[var(--color-ink-soft)]">
+            <li>🕐 30 or 60 minute walks</li>
+            <li>📍 Local parks and green spaces</li>
+            <li>📸 Photo updates every walk</li>
+          </ul>
+        </div>
+        <!-- Home Pet Sitting -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-[var(--color-border)] hover:shadow-md transition-shadow">
+          <div class="text-5xl mb-4">🏠</div>
+          <h3 class="text-xl font-extrabold text-[var(--color-ink)] mb-2">Home Pet Sitting</h3>
+          <p class="text-[var(--color-ink-soft)] text-sm leading-relaxed">We come to you. Your pet stays comfortable in their own home with all their favourite things around them.</p>
+          <ul class="mt-4 space-y-1 text-sm text-[var(--color-ink-soft)]">
+            <li>🔑 Key holding available</li>
+            <li>🐱 Cats and dogs welcome</li>
+            <li>📱 Regular check-in updates</li>
+          </ul>
+        </div>
+        <!-- Overnight Stays -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-[var(--color-border)] hover:shadow-md transition-shadow">
+          <div class="text-5xl mb-4">🌙</div>
+          <h3 class="text-xl font-extrabold text-[var(--color-ink)] mb-2">Overnight Stays</h3>
+          <p class="text-[var(--color-ink-soft)] text-sm leading-relaxed">Going away? We can stay at your home overnight so your pet never has to leave familiar surroundings.</p>
+          <ul class="mt-4 space-y-1 text-sm text-[var(--color-ink-soft)]">
+            <li>🌜 Evening and morning care</li>
+            <li>🛌 We stay at your home</li>
+            <li>🌅 Morning walk included</li>
+          </ul>
+        </div>
+        <!-- Drop-in Visits -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-[var(--color-border)] hover:shadow-md transition-shadow">
+          <div class="text-5xl mb-4">🚗</div>
+          <h3 class="text-xl font-extrabold text-[var(--color-ink)] mb-2">Drop-in Visits</h3>
+          <p class="text-[var(--color-ink-soft)] text-sm leading-relaxed">Perfect for cats or dogs who are fine alone but need a check-in, feed, and a cuddle during the day.</p>
+          <ul class="mt-4 space-y-1 text-sm text-[var(--color-ink-soft)]">
+            <li>⏱️ 30 minute pop-in visits</li>
+            <li>🥣 Feeding and water refresh</li>
+            <li>🐱 Great for cats and small pets</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coverage Area -->
+  <section id="coverage" class="py-20 bg-[var(--color-brand-primary-deep)]">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <span class="inline-block bg-white/20 text-white text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Where We Work</span>
+        <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Coverage Area</h2>
+        <p class="text-white/80 text-lg max-w-2xl mx-auto">We cover Sutton Coldfield and the surrounding areas. Not sure if we reach you? Give us a call and we will do our best to help.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <!-- Areas list -->
+        <div>
+          <h3 class="text-xl font-extrabold text-[var(--color-brand-accent)] mb-6">Areas We Cover</h3>
+          <div class="grid grid-cols-2 gap-3">
+            {[
+              'Sutton Coldfield', 'Four Oaks', 'Mere Green', 'Little Aston',
+              'Streetly', 'Wylde Green', 'Boldmere', 'New Oscott',
+              'Erdington', 'Walmley', 'Minworth', 'Curdworth'
+            ].map(area => (
+              <div class="flex items-center gap-2 text-white font-medium">
+                <span class="text-[var(--color-brand-accent)]">📍</span>
+                {area}
+              </div>
+            ))}
+          </div>
+          <p class="mt-8 text-white/70 text-sm">Not on the list? Get in touch and we will check if we can accommodate you.</p>
+        </div>
+        <!-- Pack size and logistics info -->
+        <div class="space-y-5">
+          <h3 class="text-xl font-extrabold text-[var(--color-brand-accent)] mb-6">How We Work</h3>
+          <div class="bg-white/10 rounded-xl p-5 border border-white/20">
+            <div class="flex items-start gap-4">
+              <span class="text-3xl">🐕‍🦺</span>
+              <div>
+                <h4 class="font-extrabold text-white mb-1">Small Pack Sizes</h4>
+                <p class="text-white/80 text-sm">We keep our walking groups small so every dog gets proper attention, socialisation, and supervision. Never overcrowded.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white/10 rounded-xl p-5 border border-white/20">
+            <div class="flex items-start gap-4">
+              <span class="text-3xl">🗓️</span>
+              <div>
+                <h4 class="font-extrabold text-white mb-1">Flexible Scheduling</h4>
+                <p class="text-white/80 text-sm">Morning, afternoon, or evening slots available. We work around your routine, not the other way around.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white/10 rounded-xl p-5 border border-white/20">
+            <div class="flex items-start gap-4">
+              <span class="text-3xl">🔒</span>
+              <div>
+                <h4 class="font-extrabold text-white mb-1">Fully Insured</h4>
+                <p class="text-white/80 text-sm">We are fully insured and DBS checked. Your pet and your home are in safe hands at all times.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Typical Day -->
+  <section class="py-20 bg-[var(--color-brand-sky-light)]">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <span class="inline-block bg-[var(--color-brand-sky)] text-white text-sm font-semibold px-4 py-1.5 rounded-full mb-4">A Day in the Life</span>
+        <h2 class="text-4xl md:text-5xl font-extrabold text-[var(--color-ink)] mb-4">A Typical Walking Day</h2>
+        <p class="text-[var(--color-ink-soft)] text-lg max-w-xl mx-auto">Here is what a standard dog walking day looks like when your dog is in our care.</p>
+      </div>
+      <div class="relative">
+        <!-- Timeline line -->
+        <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-[var(--color-brand-sky)] hidden sm:block" aria-hidden="true"></div>
+        <div class="space-y-8">
+          {[
+            { time: '8:00 am', icon: '🏠', title: 'Pick-up from home', desc: 'We collect your dog from your door. You will get a confirmation message and a quick photo so you know the adventure has begun.' },
+            { time: '8:15 am', icon: '🚗', title: 'Travel to walk location', desc: 'Safe, secure transport to one of our favourite local green spaces. Dogs are secured throughout the journey.' },
+            { time: '8:30 am', icon: '🌳', title: 'The big walk', desc: 'An hour of fresh air, sniffing, socialising, and proper exercise. We keep the group small so every dog gets our full attention.' },
+            { time: '9:30 am', icon: '💧', title: 'Towel dry and water', desc: 'After the walk, muddy paws get a wipe-down and everyone gets a fresh drink before heading home.' },
+            { time: '10:00 am', icon: '🏡', title: 'Drop-off and debrief', desc: 'Your dog is returned home, settled, and we send you a photo update and a quick note on how they got on.' },
+          ].map(step => (
+            <div class="flex gap-6 items-start sm:pl-20 relative">
+              <div class="absolute left-4 w-8 h-8 bg-[var(--color-brand-sky)] rounded-full flex items-center justify-center text-white font-bold text-xs hidden sm:flex" aria-hidden="true">
+                ●
+              </div>
+              <div class="bg-white rounded-xl p-5 shadow-sm border border-[var(--color-border)] flex-1">
+                <div class="flex items-center gap-3 mb-2">
+                  <span class="text-2xl">{step.icon}</span>
+                  <div>
+                    <span class="text-xs font-semibold text-[var(--color-brand-sky)] uppercase tracking-wide">{step.time}</span>
+                    <h4 class="font-extrabold text-[var(--color-ink)] leading-tight">{step.title}</h4>
+                  </div>
+                </div>
+                <p class="text-[var(--color-ink-soft)] text-sm leading-relaxed">{step.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section id="about" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Text -->
+        <div>
+          <span class="inline-block bg-[var(--color-cream)] text-[var(--color-brand-primary)] text-sm font-semibold px-4 py-1.5 rounded-full mb-6">About Us</span>
+          <h2 class="text-4xl md:text-5xl font-extrabold text-[var(--color-ink)] mb-6">We Love Pets as Much as You Do</h2>
+          <p class="text-[var(--color-ink-soft)] text-lg leading-relaxed mb-4">PAWfect Friends is a professional pet sitting service based right here in Sutton Coldfield. We are passionate about animals and understand how important it is to find someone you can truly trust with your beloved pets.</p>
+          <p class="text-[var(--color-ink-soft)] leading-relaxed mb-4">We offer a reliable, personal service built on trust. Every booking starts with a free meet-and-greet so your pet can get to know us before we start, and you can ask all the questions you need.</p>
+          <p class="text-[var(--color-ink-soft)] leading-relaxed mb-8">Whether you are at work, on holiday, or just need a hand, we are here to make sure your pets are happy, safe, and very well looked after.</p>
+          <div class="flex flex-wrap gap-4">
+            <div class="flex items-center gap-2 bg-[var(--color-cream)] px-4 py-2 rounded-full">
+              <span>🐾</span>
+              <span class="text-sm font-semibold text-[var(--color-ink)]">Animal lovers</span>
+            </div>
+            <div class="flex items-center gap-2 bg-[var(--color-cream)] px-4 py-2 rounded-full">
+              <span>🔒</span>
+              <span class="text-sm font-semibold text-[var(--color-ink)]">Fully insured</span>
+            </div>
+            <div class="flex items-center gap-2 bg-[var(--color-cream)] px-4 py-2 rounded-full">
+              <span>❤️</span>
+              <span class="text-sm font-semibold text-[var(--color-ink)]">First aid trained</span>
+            </div>
+            <div class="flex items-center gap-2 bg-[var(--color-cream)] px-4 py-2 rounded-full">
+              <span>📍</span>
+              <span class="text-sm font-semibold text-[var(--color-ink)]">Locally based</span>
+            </div>
+          </div>
+        </div>
+        <!-- Visual card (no photos available) -->
+        <div class="bg-[var(--color-brand-primary)] rounded-2xl p-8 text-white text-center">
+          <div class="text-8xl mb-6">🐾</div>
+          <h3 class="text-2xl font-extrabold mb-4 text-white">Why Choose Us?</h3>
+          <ul class="space-y-4 text-left">
+            {[
+              { icon: '📱', text: 'Photo and message updates every single visit' },
+              { icon: '🤝', text: 'Free meet-and-greet before we start' },
+              { icon: '🏡', text: 'Your pet stays in their own home where they feel safe' },
+              { icon: '🌧️', text: 'Rain or shine, we always show up' },
+              { icon: '🐶', text: 'Experience with all breeds and temperaments' },
+              { icon: '🌟', text: 'We go the extra mile because your pet deserves it' },
+            ].map(item => (
+              <li class="flex items-start gap-3">
+                <span class="text-xl flex-shrink-0">{item.icon}</span>
+                <span class="text-white/90 text-sm leading-snug">{item.text}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-20 bg-[var(--color-brand-bg)]">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <span class="inline-block bg-[var(--color-cream)] text-[var(--color-brand-primary)] text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Clear &amp; Simple</span>
+        <h2 class="text-4xl md:text-5xl font-extrabold text-[var(--color-ink)] mb-4">Pricing</h2>
+        <p class="text-[var(--color-ink-soft)] text-lg max-w-xl mx-auto">No hidden fees. No surprises. Just honest prices for great care.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Dog Walking -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-[var(--color-border)] text-center">
+          <div class="text-4xl mb-3">🐕</div>
+          <h3 class="font-extrabold text-[var(--color-ink)] text-lg mb-1">Dog Walking</h3>
+          <div class="text-3xl font-extrabold text-[var(--color-brand-primary)] my-3">POA</div>
+          <p class="text-[var(--color-ink-whisper)] text-xs mb-4">60 min group walk</p>
+          <a href="#contact" class="block bg-[var(--color-brand-primary)] hover:bg-[var(--color-brand-primary-deep)] text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm">Get a Quote</a>
+        </div>
+        <!-- Home Sitting -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-[var(--color-border)] text-center">
+          <div class="text-4xl mb-3">🏠</div>
+          <h3 class="font-extrabold text-[var(--color-ink)] text-lg mb-1">Home Sitting</h3>
+          <div class="text-3xl font-extrabold text-[var(--color-brand-primary)] my-3">POA</div>
+          <p class="text-[var(--color-ink-whisper)] text-xs mb-4">Per visit / per day</p>
+          <a href="#contact" class="block bg-[var(--color-brand-primary)] hover:bg-[var(--color-brand-primary-deep)] text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm">Get a Quote</a>
+        </div>
+        <!-- Overnight -->
+        <div class="bg-[var(--color-brand-primary)] rounded-2xl p-6 shadow-md text-center relative">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[var(--color-brand-accent)] text-white text-xs font-bold px-3 py-1 rounded-full">Popular</div>
+          <div class="text-4xl mb-3">🌙</div>
+          <h3 class="font-extrabold text-white text-lg mb-1">Overnight Stay</h3>
+          <div class="text-3xl font-extrabold text-[var(--color-brand-accent)] my-3">POA</div>
+          <p class="text-white/70 text-xs mb-4">We stay at your home</p>
+          <a href="#contact" class="block bg-white hover:bg-white/90 text-[var(--color-brand-primary)] font-bold py-2 px-4 rounded-lg transition-colors text-sm">Get a Quote</a>
+        </div>
+        <!-- Drop-in -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-[var(--color-border)] text-center">
+          <div class="text-4xl mb-3">🚗</div>
+          <h3 class="font-extrabold text-[var(--color-ink)] text-lg mb-1">Drop-in Visit</h3>
+          <div class="text-3xl font-extrabold text-[var(--color-brand-primary)] my-3">POA</div>
+          <p class="text-[var(--color-ink-whisper)] text-xs mb-4">30 min check-in visit</p>
+          <a href="#contact" class="block bg-[var(--color-brand-primary)] hover:bg-[var(--color-brand-primary-deep)] text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm">Get a Quote</a>
+        </div>
+      </div>
+      <p class="text-center text-[var(--color-ink-whisper)] text-sm mt-8">Prices vary depending on your location, pet's needs, and frequency. Get in touch for a personalised quote.</p>
+    </div>
+  </section>
+
+  <!-- Testimonials placeholder -->
+  <section class="py-20 bg-[var(--color-brand-accent)]">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <span class="inline-block bg-white/20 text-white text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Happy Clients</span>
+        <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">What Our Clients Say</h2>
+        <p class="text-white/80 text-lg max-w-xl mx-auto">We are building our review portfolio. Check back soon, or be one of our first reviewers!</p>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-6">
+        {['⭐⭐⭐⭐⭐', '⭐⭐⭐⭐⭐', '⭐⭐⭐⭐⭐'].map((stars, i) => (
+          <div class="bg-white/20 rounded-2xl p-6 border border-white/30 text-center">
+            <div class="text-3xl mb-3">🐾</div>
+            <p class="text-white font-medium italic mb-4 text-sm">"Review coming soon. We would love to hear from you!"</p>
+            <div class="text-yellow-300 text-sm mb-2">{stars}</div>
+            <p class="text-white/70 text-xs">PAWfect Friends client</p>
+          </div>
+        ))}
+      </div>
+      <div class="text-center mt-10">
+        <a href="#contact" class="inline-block bg-white hover:bg-white/90 text-[var(--color-brand-accent-deep)] font-bold px-8 py-3 rounded-lg transition-colors">
+          Book your first visit
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / Contact -->
+  <section id="contact" class="py-20 bg-[var(--color-brand-primary-deep)]">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <!-- Left: contact info -->
+        <div>
+          <span class="inline-block bg-white/20 text-white text-sm font-semibold px-4 py-1.5 rounded-full mb-6">Get in Touch</span>
+          <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Ready to Book?</h2>
+          <p class="text-white/80 text-lg leading-relaxed mb-8">Get in touch today for a free meet-and-greet. We would love to meet you and your pets before we get started.</p>
+          <div class="space-y-4">
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 bg-[var(--color-brand-accent)] rounded-full flex items-center justify-center flex-shrink-0">
+                <span class="text-white">📞</span>
+              </div>
+              <div>
+                <p class="text-white/60 text-xs uppercase tracking-wide font-semibold">Phone</p>
+                <a href="tel:+447961765506" class="text-white font-bold text-lg hover:text-[var(--color-brand-accent)] transition-colors">07961 765506</a>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 bg-[var(--color-brand-accent)] rounded-full flex items-center justify-center flex-shrink-0">
+                <span class="text-white">📍</span>
+              </div>
+              <div>
+                <p class="text-white/60 text-xs uppercase tracking-wide font-semibold">Location</p>
+                <p class="text-white font-bold text-lg">Sutton Coldfield</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Right: contact form -->
+        <div class="bg-white rounded-2xl p-8 shadow-lg">
+          <h3 class="text-xl font-extrabold text-[var(--color-ink)] mb-6">Send Us a Message</h3>
+          <form action="https://formspree.io/f/mwvaaojq" method="POST" class="space-y-4">
+            <div>
+              <label for="name" class="block text-sm font-semibold text-[var(--color-ink)] mb-1">Your Name</label>
+              <input type="text" id="name" name="name" required placeholder="Jane Smith" class="w-full border border-[var(--color-border)] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-primary)]" />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-semibold text-[var(--color-ink)] mb-1">Email Address</label>
+              <input type="email" id="email" name="email" required placeholder="jane@example.com" class="w-full border border-[var(--color-border)] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-primary)]" />
+            </div>
+            <div>
+              <label for="phone" class="block text-sm font-semibold text-[var(--color-ink)] mb-1">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="07700 000000" class="w-full border border-[var(--color-border)] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-primary)]" />
+            </div>
+            <div>
+              <label for="service" class="block text-sm font-semibold text-[var(--color-ink)] mb-1">Service Required</label>
+              <select id="service" name="service" class="w-full border border-[var(--color-border)] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-primary)] bg-white">
+                <option value="">Please select...</option>
+                <option value="dog-walking">Dog Walking</option>
+                <option value="home-sitting">Home Pet Sitting</option>
+                <option value="overnight">Overnight Stay</option>
+                <option value="drop-in">Drop-in Visit</option>
+                <option value="unsure">Not sure yet</option>
+              </select>
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-semibold text-[var(--color-ink)] mb-1">Tell Us About Your Pet</label>
+              <textarea id="message" name="message" rows="3" placeholder="Breed, age, any special needs..." class="w-full border border-[var(--color-border)] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-primary)] resize-none"></textarea>
+            </div>
+            <input type="hidden" name="_subject" value="New enquiry from PAWfect Friends website" />
+            <button type="submit" class="w-full bg-[var(--color-brand-primary)] hover:bg-[var(--color-brand-primary-deep)] text-white font-bold py-3 px-6 rounded-lg transition-colors">
+              Send Enquiry 🐾
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[var(--color-ink)] text-white py-12">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid sm:grid-cols-3 gap-8 mb-10">
+        <!-- Brand -->
+        <div>
+          <div class="flex items-center gap-2 mb-4">
+            <span class="text-2xl">🐾</span>
+            <span class="font-extrabold text-xl font-display">PAWfect Friends</span>
+          </div>
+          <p class="text-white/60 text-sm leading-relaxed">Professional pet sitting and dog walking in Sutton Coldfield. Caring, reliable, and completely local.</p>
+        </div>
+        <!-- Nav -->
+        <div>
+          <h4 class="font-extrabold text-[var(--color-brand-accent)] uppercase tracking-wide text-xs mb-4">Navigation</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+            <li><a href="#coverage" class="hover:text-white transition-colors">Coverage Area</a></li>
+            <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
+            <li><a href="#pricing" class="hover:text-white transition-colors">Pricing</a></li>
+            <li><a href="#contact" class="hover:text-white transition-colors">Get in Touch</a></li>
+          </ul>
+        </div>
+        <!-- Contact -->
+        <div>
+          <h4 class="font-extrabold text-[var(--color-brand-accent)] uppercase tracking-wide text-xs mb-4">Contact</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li class="flex items-center gap-2"><span>📞</span> <a href="tel:+447961765506" class="hover:text-white transition-colors">07961 765506</a></li>
+            <li class="flex items-center gap-2"><span>📍</span> Sutton Coldfield</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-white/40 text-xs">
+        <span>&copy; {new Date().getFullYear()} PAWfect Friends. All rights reserved.</span>
+        <span>This is a sample site built by <a href="https://biscuitweb.co.uk" class="underline hover:text-white/70">Biscuit Web</a> to showcase our work.</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

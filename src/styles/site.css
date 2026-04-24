@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 400 600 700 800; font-display: swap; src: url('/fonts/inter-latin.woff2') format('woff2'); }
+@font-face { font-family: 'Nunito'; font-style: normal; font-weight: 700 800; font-display: swap; src: url('/fonts/nunito-latin.woff2') format('woff2'); }
+
+@theme {
+  /* PAWfect Friends: grass greens, sky blues, energetic yellows */
+  --color-brand-bg: #F4FAF6;
+  --color-brand-primary: #2D7D46;
+  --color-brand-primary-deep: #1F5C32;
+  --color-brand-accent: #F59E0B;
+  --color-brand-accent-deep: #D97706;
+  --color-brand-sky: #2B6CB0;
+  --color-brand-sky-light: #EBF4FF;
+  --color-ink: #1A2E1A;
+  --color-ink-soft: #374637;
+  --color-ink-whisper: #6B7A6B;
+  --color-border: #C6DCC9;
+  --color-cream: #F0FAF3;
+  --color-white: #FFFFFF;
+  --font-display: 'Nunito', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); color: var(--color-ink); background-color: var(--color-brand-bg); }
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); }
+img { max-width: 100%; display: block; }
