@@ -448,7 +448,8 @@ const site = {
         <!-- Right: contact form -->
         <div class="bg-white rounded-2xl p-8 shadow-lg">
           <h3 class="text-xl font-extrabold text-[var(--color-ink)] mb-6">Send Us a Message</h3>
-          <form action="https://formspree.io/f/mwvaaojq" method="POST" class="space-y-4">
+          <form action="/api/contact" method="POST" class="space-y-4">
+            <input type="hidden" name="_site_id" value="P2504" /><input type="hidden" name="_business_name" value="PAWfect Friends" /><input type="hidden" name="_business_email" value="" /><div style="position:absolute;left:-9999px" aria-hidden="true"><input type="text" name="_hp" tabindex="-1" autocomplete="off" /></div>
             <div>
               <label for="name" class="block text-sm font-semibold text-[var(--color-ink)] mb-1">Your Name</label>
               <input type="text" id="name" name="name" required placeholder="Jane Smith" class="w-full border border-[var(--color-border)] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-primary)]" />
